@@ -1,0 +1,40 @@
+TAREA 4
+
+Programa [70%]
+Esta tarea tiene como objetivo la comparación de distintos tipos de clasificadores supervisados del
+tipo paramétrico y no paramétrico sobre un conjunto de texturas. Las imágenes han sido obtenidas
+desde el proyecto T1K+: A Database for Benchmarking Color Texture Classification and Retrieval Methods1.
+La base de datos está compuesta por 10 categorías de texturas, cada una con 50 imágenes, la cual se
+encuentra disponible junto a este enunciado.
+I) Base de Datos Construya una base de datos con 24 características por cada imagen. Donde los
+descriptores a extraer son los siguientes: 6 descriptores de textura: {contraste, energía, ASM,
+homogeneidad, correlación, disimilaridad}. Active la opción symmetric=True al momento de
+construir la matriz de co-ocurrencia. En concreto son:
+§ 6 descriptores del canal R,
+§ 6 descriptores del canal G,
+§ 6 descriptores del canal B y,
+§ 6 descriptores de una imagen en escala de grises. (hint: transforme a escala de grises)
+II) Normalización. A cada columna-característica, utilice la técnica media cero, desviación uno para
+normalizarla.
+III) Selección de características. De la base de datos generada, utilice una de las técnicas vistas en
+clases (SFS, SBS, Lasso) sobre el conjunto de características maximizando el índice de Fisher u otro
+relacionado con teoría de la información. Usted debe definir el mínimo número de características
+que maximice el rendimiento del clasificador. Puede ir experimentando con distintos números de
+características.
+IV) Clasificador. Compare los siguientes clasificadores utilizando un 70% de los datos de
+entrenamiento y 30% de testing.
+(1) Naive Bayes
+(2) Árbol de decisión
+(3) KNN (Lazy->IBK) (con K=5 o más)
+V) Rendimiento. Grafique el rendimiento promedio F-score y determine cuál es el mejor clasificador.
+Usted puede modificar los parámetros que desee, por ejemplo, los valores de L y R en caso que haya
+emplear Take-L, Plus-R, u otro algoritmo. Verifique si obtiene el mismo rendimiento sin normalizar la
+matriz del paso II). Explique y justifique sus resultados sobre este último punto.
+Entrega
+M Plazo de entrega: JUEVES 3 de DICIEMBRE hasta las 23:59:59 hrs
+ Subir programa en formato .ipynb a la plataforma CANVAS en el link Tarea 04 (comprimir un
+archivo ZIP)
+N Descuento: 0.5 punto por cada hora de atraso.
+6 La tarea 4 SI contempla informe. El documento debe estar enfocado en los puntos IV) y V) del
+programa, explicando los experimentos y cambios que haya realizado, y el resultado del
+clasificador. Ponderación del reporte (30%
